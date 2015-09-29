@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9052" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fZ4-m1-Veb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9040"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RXDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,172 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="passwordInput" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tNy-D6-MO1">
+                                <rect key="frame" x="252" y="194" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="203" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOg-BC-B56">
+                                <rect key="frame" x="277" y="351" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="373" width="46" height="30"/>
+                                </variation>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nameInput" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-9t-8d2">
+                                <rect key="frame" x="252" y="126" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="138" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="fOg-BC-B56" id="dty-Ql-vU3"/>
+                        <outlet property="nameField" destination="aQQ-9t-8d2" id="5AB-tF-sGp"/>
+                        <outlet property="pwdField" destination="tNy-D6-MO1" id="sjc-IQ-Anj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-509" y="-61"/>
+        </scene>
+        <!--Club View Controller-->
+        <scene sceneID="ISB-LD-dlr">
+            <objects>
+                <viewController id="AVx-s1-E6x" customClass="ClubViewController" customModule="RXDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jtf-pS-FVy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Llc-ec-vR2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1w6-f5-MpE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OiV-8V-zhh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Llc-ec-vR2" firstAttribute="top" secondItem="OiV-8V-zhh" secondAttribute="bottom" id="4RH-a2-kLf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OiV-8V-zhh" secondAttribute="trailing" constant="-20" id="5WU-kT-RnR"/>
+                            <constraint firstItem="OiV-8V-zhh" firstAttribute="leading" secondItem="1w6-f5-MpE" secondAttribute="leadingMargin" constant="-20" id="NdW-4W-0Ob"/>
+                            <constraint firstItem="OiV-8V-zhh" firstAttribute="top" secondItem="1w6-f5-MpE" secondAttribute="topMargin" id="ZSE-dy-ZMX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uvq-fN-VtT"/>
+                    <connections>
+                        <outlet property="clubList" destination="OiV-8V-zhh" id="qIi-3z-k3p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vf0-Rf-GBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095" y="705"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="xwa-F1-1YY">
+            <objects>
+                <viewController id="bOE-g3-dTb" customClass="ProfileViewController" customModule="RXDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gga-Ma-qUS"/>
+                        <viewControllerLayoutGuide type="bottom" id="X1Q-uo-pJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zCj-in-1cm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="t16-tG-bRA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ax-w0-jIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211" y="2134"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="Hww-3y-qg6">
+            <objects>
+                <viewController id="ncU-Nh-DUG" customClass="HomeViewController" customModule="RXDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Ry-IG-v1J"/>
+                        <viewControllerLayoutGuide type="bottom" id="dpV-eA-CZu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hpm-hf-O01">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="RXR-wD-dxH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSc-Vc-Bxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431" y="-2"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Cf9-ZW-3sf">
+            <objects>
+                <tabBarController id="fZ4-m1-Veb" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Txl-AM-gma">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ncU-Nh-DUG" kind="relationship" relationship="viewControllers" id="cUV-2f-SlE"/>
+                        <segue destination="1eg-9z-7Ga" kind="relationship" relationship="viewControllers" id="tRc-Hh-hWe"/>
+                        <segue destination="bcL-4V-Rs7" kind="relationship" relationship="viewControllers" id="81o-Ab-akj"/>
+                        <segue destination="bOE-g3-dTb" kind="relationship" relationship="viewControllers" id="WBr-Kb-V30"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqO-uo-PIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1517" y="1641"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="vCE-1y-TPa">
+            <objects>
+                <viewController id="bcL-4V-Rs7" customClass="JoinedViewController" customModule="RXDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fz3-XI-JKc"/>
+                        <viewControllerLayoutGuide type="bottom" id="jkC-sB-UFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="28d-3J-pib">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="MiJ-bK-jbz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BaG-tb-TMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301" y="1520"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="7Nm-Eg-XN6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1eg-9z-7Ga" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="961-m7-AEr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X8a-l4-KL3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AVx-s1-E6x" kind="relationship" relationship="rootViewController" id="enB-bJ-IT5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vi-5Y-Ab3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="705"/>
         </scene>
     </scenes>
 </document>
