@@ -27,6 +27,7 @@
 		C8416FCC1BA1226400B85036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8416FCA1BA1226400B85036 /* LaunchScreen.storyboard */; };
 		C8416FD71BA1226400B85036 /* RXDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8416FD61BA1226400B85036 /* RXDemoTests.swift */; };
 		C8416FE21BA12DAF00B85036 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8416FE11BA12DAF00B85036 /* LoginViewModel.swift */; };
+		C87FEACA1BCE272E0034CA08 /* NSTimer+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87FEAC91BCE272E0034CA08 /* NSTimer+Block.swift */; };
 		C8F86D901BB4111600713383 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F86D8F1BB4111600713383 /* APIService.swift */; };
 		C8F86D921BB414D900713383 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F86D911BB414D900713383 /* UserModel.swift */; };
 		C8F86D951BB4E52E00713383 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F86D941BB4E52E00713383 /* ViewControllerExtension.swift */; };
@@ -68,6 +69,7 @@
 		C8416FD61BA1226400B85036 /* RXDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RXDemoTests.swift; sourceTree = "<group>"; };
 		C8416FD81BA1226400B85036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8416FE11BA12DAF00B85036 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C87FEAC91BCE272E0034CA08 /* NSTimer+Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimer+Block.swift"; sourceTree = "<group>"; };
 		C8F86D8F1BB4111600713383 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = Service/APIService.swift; sourceTree = "<group>"; };
 		C8F86D911BB414D900713383 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Models/UserModel.swift; sourceTree = "<group>"; };
 		C8F86D931BB4DAFB00713383 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				C8416FC11BA1226400B85036 /* AppDelegate.swift */,
 				C8416FC31BA1226400B85036 /* ViewController.swift */,
 				C8F86D941BB4E52E00713383 /* ViewControllerExtension.swift */,
+				C87FEAC91BCE272E0034CA08 /* NSTimer+Block.swift */,
 				C83796401BB8F17D0066BDF6 /* ViewModels */,
 				C837963D1BB8F0080066BDF6 /* Models */,
 				C837963C1BB8EE540066BDF6 /* ViewControllers */,
@@ -382,6 +385,7 @@
 				C83796471BB908CB0066BDF6 /* ClubListViewModel.swift in Sources */,
 				C83796491BB90A120066BDF6 /* ClubModel.swift in Sources */,
 				C837963F1BB8F1440066BDF6 /* ProfileViewModel.swift in Sources */,
+				C87FEACA1BCE272E0034CA08 /* NSTimer+Block.swift in Sources */,
 				C837963B1BB8EE4A0066BDF6 /* ProfileViewController.swift in Sources */,
 				C810DA641BB94067004CE7A6 /* ClubTableCellViewModel.swift in Sources */,
 				C8F86D921BB414D900713383 /* UserModel.swift in Sources */,

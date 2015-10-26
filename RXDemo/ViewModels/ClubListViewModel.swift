@@ -22,7 +22,7 @@ class ClubListViewModel {
     func fetchClubList(fromPage page:Int) -> Observable<[ClubTableCellViewModel]>{
         
         return create{ (observer ) -> Disposable in
-            Alamofire.request(Method.GET, "http://www.mocky.io/v2/560a046995e00cc208981280").responseArray{[unowned self]
+            let request = Alamofire.request(Method.GET, "http://www.mocky.io/v2/561c668c110000570a1cb4a6").responseArray{[unowned self]
                  (results:[ClubModel]?, err:ErrorType?) -> Void in
                     if let _ = err{
                         observer.on(Event.Error(err!))
@@ -33,7 +33,6 @@ class ClubListViewModel {
                                 self.cellViewModels.removeAll()
                             }
                             self.cellViewModels.appendContentsOf(cellVMs)
-                            
                             observer.on(Event.Next(self.cellViewModels))
                             observer.on(Event.Completed)
                         }else{
@@ -42,7 +41,9 @@ class ClubListViewModel {
                     }
                 }
             
-            return NopDisposable.instance
+            return AnonymousDisposable{
+                request.cancel()
+            }
         }
     }
 }

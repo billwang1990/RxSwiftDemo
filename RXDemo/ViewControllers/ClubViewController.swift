@@ -26,12 +26,11 @@ class ClubViewController: BaseViewController, UITableViewDelegate  {
     func setupUI(){
         self.clubList.registerClass(ClubListCell.self, forCellReuseIdentifier: "clubCell")
         self.clubList.addSubview(self.refreshCtrl)
+        self.clubList.rowHeight = 50
         self.refreshCtrl.addTarget(self, action: "handleRefresh", forControlEvents: .ValueChanged)
     }
     
     func bindingViewModel(){
-
-//        var observe:Observable<Bool> = self.refreshCtrl.rx_observe("refreshing", options:NSKeyValueObservingOptions.Initial.union(.New), retainSelf: false)
         
         self.page
             .throttle(0.5, MainScheduler.sharedInstance)
@@ -40,6 +39,7 @@ class ClubViewController: BaseViewController, UITableViewDelegate  {
             }
             .flatMap {[unowned self] in
                 self.viewModel.fetchClubList(fromPage: $0)
+                    .observeOn(MainScheduler.sharedInstance)
                     .doOn{ [unowned self] in
                         self.refreshCtrl.endRefreshing()
                         self.refreshCtrl.enabled = true
@@ -58,19 +58,11 @@ class ClubViewController: BaseViewController, UITableViewDelegate  {
                 self.clubList.deselectRowAtIndexPath(value , animated: false)
             }
             .addDisposableTo(self.dispose)
-        
-        self.clubList.rx_contentOffset.subscribeNext { (offset) -> Void in
-            print(offset)
-        }
     }
     
     func handleRefresh(){
         self.page.value = 0
     }
 
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        return 100.0
-    }
     
 }

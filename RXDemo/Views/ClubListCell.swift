@@ -8,13 +8,25 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ClubListCell: UITableViewCell {
-    var viewModel : ClubTableCellViewModel! {
+    
+    var dispose = DisposeBag()
+
+     var viewModel : ClubTableCellViewModel! {
+        
         didSet{
             
             //TODO: complte UI
-            self.textLabel?.text = viewModel.name
+            combineLatest(viewModel.expire, viewModel.name) { [weak self] (t, n) -> String in
+                return ("\(self!.viewModel.name.value)剩余：\(self!.viewModel.expire.value)")
+            }.subscribeNext { [weak self](s) -> Void in
+                self!.textLabel?.text = s
+            }.addDisposableTo(self.dispose)
+            
+         
         }
     }
     
